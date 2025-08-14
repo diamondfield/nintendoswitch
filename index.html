@@ -49,7 +49,8 @@
     .kicker{ color: var(--muted); font-size:.95rem; margin-bottom:4px; }
     .steps{ list-style: none; padding:0; margin:0; display:grid; gap:10px; }
 
-    .step{ display:grid; grid-template-columns: auto 1fr; gap:10px; align-items:start; background: linear-gradient(180deg, #ffffff, #fafafa); border:1px solid var(--border); border-radius:16px; padding:12px; }
+    /* iOS/Firefox kontrastfix: brug temaets kortfarve i stedet for hardkodet lys gradient */
+    .step{ display:grid; grid-template-columns: auto 1fr; gap:10px; align-items:start; background: var(--card); border:1px solid var(--border); border-radius:16px; padding:12px; }
     .step input[type="checkbox"]{ inline-size: 24px; block-size: 24px; accent-color: var(--accent); }
     .step label{ font-weight:600; }
     .step small{ color: var(--muted); display:block; margin-top:4px; }
@@ -211,33 +212,7 @@
       </article>
     </section>
 
-    <section class="grid tools" aria-labelledby="tools-title">
-      <article class="card">
-        <h2 id="tools-title">Tilgængelighed & læsbarhed (kort)</h2>
-        <ul>
-          <li>Tekstkontrast sigter mod WCAG 2.1 AA (mindst 4.5:1 for brødtekst).</li>
-          <li>Grundstørrelse for tekst ≈ 18px (≥16px anbefales bredt for læsbarhed).</li>
-          <li>Knapper har <em>min. højde 48px</em> og tydeligt fokusfelt for tastatur.</li>
-          <li>Reduceret bevægelse respekteres (<code>prefers-reduced-motion</code>).</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Ofte stillede spørgsmål</h2>
-        <details>
-          <summary>Kan man købe uden kort?</summary>
-          <p>Ja, brug Nintendo eShop‑gavekort købt i butik.</p>
-        </details>
-        <details>
-          <summary>Hvor ser jeg de klassiske spil?</summary>
-          <p>I eShop – download apps til <em>Nintendo Switch Online</em> (NES/SNES/…)</p>
-        </details>
-        <details>
-          <summary>Print som PDF?</summary>
-          <p>Klik på <em>Print</em> nedenfor.</p>
-        </details>
-      </article>
-    </section>
+    <!-- De to nederste sektioner (“Tilgængelighed & læsbarhed” og “Ofte stillede spørgsmål”) er fjernet -->
 
     <div class="container" style="padding:0; margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
       <button class="btn btn-primary" id="biggerText" aria-pressed="false" aria-label="Større tekst">A↗︎ Større tekst</button>
